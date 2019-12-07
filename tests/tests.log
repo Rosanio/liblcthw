@@ -1,0 +1,25 @@
+[INFO] (src/lcthw/list_algos.c:14) Bubble sort!
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and 1234: 39
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and abcd: -9
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and xjvef: -23
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing xjvef and NDSS: 42
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing 1234 and XXXX: -39
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and abcd: -9
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and NDSS: 19
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and xjvef: -23
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing 1234 and XXXX: -39
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and NDSS: 10
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and abcd: -9
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and xjvef: -23
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing 1234 and NDSS: -29
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing NDSS and XXXX: -10
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and abcd: -9
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and xjvef: -23
+[INFO] (src/lcthw/list_algos.c:14) Bubble sort!
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing 1234 and NDSS: -29
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing NDSS and XXXX: -10
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing XXXX and abcd: -9
+[INFO] (src/lcthw/list_algos.c:24) Result of comparing abcd and xjvef: -23
+[INFO] (src/lcthw/list_algos.c:14) Bubble sort!
+[INFO] (tests/list_algos_tests.c:70) Strcmp abcd and XXXX: 1
+[ERROR] (src/lcthw/list.c:182: errno: None) Index out of bounds
