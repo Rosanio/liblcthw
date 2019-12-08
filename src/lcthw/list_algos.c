@@ -11,31 +11,33 @@ void swap(ListNode *node1, ListNode *node2) {
 
 int List_bubble_sort(List *list, List_compare cmp)
 {
-	log_info("Bubble sort!");
+	int n = List_count(list);;
+
 	// No need to sort an empty list
-	if(List_count(list) == 0) return 0;
+	if(n == 0) return 0;
 
 	int swapped = 0;
 	do {
 		swapped = 0;
+		int i = 0;
+		int last_sorted = 0;
 		LIST_FOREACH(list, first, next, cur) {
             if(cur->next) {
-				int compare_result = cmp(cur->value, cur->next->value);
-				log_info("Result of comparing %s and %s: %d", (char *)cur->value, (char *)cur->next->value, compare_result);
 				if(cmp(cur->value, cur->next->value) > 0) {
                 	swap(cur, cur->next);
                 	swapped = 1;
+					last_sorted = i;
 				}
             }
+			if(i >= n) break;
+			i++;
 		}
+		n = last_sorted;
     } while(swapped);
 
 	return 0;
 }
 
-//  Left source half is A[ iBegin:iMiddle-1].
-// Right source half is A[iMiddle:iEnd-1   ].
-// Result is            B[ iBegin:iEnd-1   ].
 void topDownMerge(List *list1, int start, int middle, int end, List *list2, List_compare cmp)
 {
     int i = start; 
