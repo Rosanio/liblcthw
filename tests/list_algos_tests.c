@@ -65,9 +65,6 @@ char *test_bubble_sort()
 char *test_merge_sort()
 {
 	List *words = create_words();
-	char *str1 = "abcd";
-	char *str2 = "XXXX";
-	log_info("Strcmp %s and %s: %d", str1, str2, strcmp(str1, str2));
 
 	// should work on a list that needs sorting
 	List *res = List_merge_sort(words, (List_compare) strcmp);
@@ -83,12 +80,29 @@ char *test_merge_sort()
 	return NULL;
 }
 
+char *test_insert_sorted()
+{
+	char *newElement = "ABCD";
+	List *words = create_words();
+	int rc = List_bubble_sort(words, (List_compare) strcmp);
+	mu_assert(rc == 0, "Bubble sort failed");
+	mu_assert(is_sorted(words), "Words should be sorted");
+
+	List_insert_sorted(words, newElement, (List_compare) strcmp);
+	log_info("Words after insert_sorted: %s", List_to_string(words));
+	mu_assert(is_sorted(words), "Words not sorted after insert");
+	mu_assert((char *)List_get(words, 2) == newElement, "New element is in incorrect position");
+
+	return NULL;
+}
+
 char *all_tests()
 {
 	mu_suite_start();
 
 	mu_run_test(test_bubble_sort);
 	mu_run_test(test_merge_sort);
+	//mu_run_test(test_insert_sorted);
 
 	return NULL;
 }

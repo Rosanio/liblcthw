@@ -222,3 +222,26 @@ char *List_to_string(List *list)
 	return result;
 }
 
+void List_insert(List *list, void *value, int index)
+{
+	check(index > List_count(list), "IndexOutOfBounds List_insert");
+	ListNode *newNode = calloc(1, sizeof(ListNode *));
+	newNode->value = value;
+	int i = 0;
+	LIST_FOREACH(list, first, next, cur) {
+		if (i == index) {
+			if (cur->prev) {
+				cur->prev->next = newNode;
+				newNode->prev = cur->prev->next;
+			}
+			cur->prev = newNode;
+			newNode->next = cur;
+			list->count++;
+			break;
+		}
+	}
+
+error:
+	return;
+}
+

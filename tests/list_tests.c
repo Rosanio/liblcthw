@@ -166,6 +166,18 @@ char *test_to_string()
 	return NULL;
 }
 
+char *test_insert()
+{
+	log_info("List before insert: %s", List_to_string(list));
+	List_insert(list, test2, 1);
+	log_info("List after insert: %s", List_to_string(list));
+
+	mu_assert(List_get(list, 1) == test2, "Element not sorted to correct index");
+
+	return NULL;
+	
+}
+
 char *all_tests()
 {
 	mu_suite_start();
@@ -183,6 +195,7 @@ char *all_tests()
 	mu_run_test(test_get);
 	mu_run_test(test_set);
 	mu_run_test(test_to_string);
+	mu_run_test(test_insert);
 
 	return NULL;
 }

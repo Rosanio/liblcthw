@@ -42,6 +42,8 @@ void List_set(List * list, int index, void *value);
 
 char *List_to_string(List * list);
 
+void List_insert(List * list, void *value, int index);
+
 #define LIST_FOREACH(L, S, M, V) ListNode *_node = NULL;\
 												   ListNode *V = NULL;\
 for(V = _node = L->S; _node != NULL; V = _node = _node->M)
